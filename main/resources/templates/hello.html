@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jokes!</title>
+</head>
+
+<body style="background-color: aqua;">
+    <h1> Jokes! </h1>
+    <div th:each="j : ${jokes}">
+        <div th:style="${j.haha &gt; j.boohoo ? 'background-color: #90EE90; border: 5px solid black;' : 'background-color: #FFB3B2; border: 5px solid black;'}">
+            <p th:text="${j.joke}"></p>
+            <p>Upvotes: <span th:text="${j.haha}"></span>
+            <p>Downvotes: <span th:text="${j.boohoo}"></span>
+        </div>
+    </div>
+</body>
+
+</html>
