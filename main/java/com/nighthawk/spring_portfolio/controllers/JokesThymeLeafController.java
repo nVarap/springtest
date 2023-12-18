@@ -20,20 +20,10 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello(Model model) {
         List<Jokes> jokes = repository.findAll();
-        List<String> j = new ArrayList<String>();
-        List<Integer> boos = new ArrayList<Integer>();
-        List<Integer> yays = new ArrayList<Integer>();
-        for (Jokes x: jokes) {
-            j.add(x.getJoke());
-            boos.add(x.getBoohoo());
-            yays.add(x.getHaha());
-        }
         model.addAttribute("jokes", jokes);
-        model.addAttribute("yays", yays);
-        model.addAttribute("boos", boos);
         
 
-        return "hello"; // This corresponds to the Thymeleaf template name (src/main/resources/templates/hello.html)
+        return "thyme"; // This corresponds to the Thymeleaf template name (src/main/resources/templates/hello.html)
     }
 
 
